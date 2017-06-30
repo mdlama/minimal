@@ -1,15 +1,9 @@
 library(shiny)
 
-shinyUI(pageWithSidebar(
-  headerPanel(title = 'Minimal shinyFiles example'),
+shinyUI(fluidPage(
+  h2('Minimal shinyFiles example'),
   
-  sidebarPanel(
-    uiOutput('shinyFilesButton')
-  ),
+  uiOutput('shinyFilesButton'),
   
-  mainPanel(
-    verbatimTextOutput(outputId = 'filepaths'),
-    hr(),
-    DT::dataTableOutput(outputId = 'tbl')
-  )
+  verbatimTextOutput(outputId = 'filepaths')
 ))
